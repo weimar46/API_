@@ -32,6 +32,10 @@ const MembresiaSchema = ({
     servicioMembresia:{
         type:String,
         required:[true, 'El servicio es requerido'],
+    },
+    precioDolar:{
+        type:Number,
+        required:[true, 'El servicio es requerido'],
     }
    
 })

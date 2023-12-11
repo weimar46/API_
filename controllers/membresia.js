@@ -27,8 +27,10 @@ const postMembresia = async(req, res) => {
 }
 
 
-const putMembresia = async(req, res) =>{
-    const {idMembresia,nombreMembresia,precioMembresia, frecuenciaMembresia, fechaInicio,fechaFin,servicioMembresia} = req.body
+const putMembresia = async (req, res) => {
+    const { idMembresia, nombreMembresia, precioMembresia, frecuenciaMembresia, fechaInicio, fechaFin, servicioMembresia, precioDolar } = req.body;
+    let mensaje;
+
     try {
         const membresia = await Membresia.findOneAndUpdate({idMembresia: idMembresia},{
             nombreMembresia: nombreMembresia,
@@ -36,19 +38,18 @@ const putMembresia = async(req, res) =>{
             frecuenciaMembresia:frecuenciaMembresia,
             fechaInicio:fechaFin,
             fechaFin: fechaInicio,
-            servicioMembresia: servicioMembresia,
-
-
+            servicioMembresia: servicioMembresia
         });//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
             mensaje = 'Actualizacion exitosa'
     } catch(error) {
         mensaje = error
     }
     res.json({
-        msg:mensaje
-    })
-    
-}
+        msg: mensaje,
+    });
+};
+
+
 
 const deleteMembresia = async(req, res) =>{
     const {idMembresia} = req.body //Desestructurar
