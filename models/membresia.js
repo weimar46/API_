@@ -33,6 +33,7 @@ const MembresiaSchema = ({
         type:String,
         required:[true, 'El servicio es requerido'],
     }
+   
 })
 
 

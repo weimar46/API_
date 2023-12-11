@@ -36,7 +36,9 @@ const putMembresia = async(req, res) =>{
             frecuenciaMembresia:frecuenciaMembresia,
             fechaInicio:fechaFin,
             fechaFin: fechaInicio,
-            servicioMembresia: servicioMembresia
+            servicioMembresia: servicioMembresia,
+
+
         });//las primeras llaves son el valor por el cual voy a hacer la modificacion el segundo hace referencia a lo que el usuario envio
             mensaje = 'Actualizacion exitosa'
     } catch(error) {
